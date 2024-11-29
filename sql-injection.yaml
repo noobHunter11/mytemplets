@@ -1,0 +1,13 @@
+id: sql-injection
+info:
+  name: SQL Injection Vulnerability
+  severity: critical
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}?id=1' or '1'='1"
+    matchers:
+      - type: word
+        words:
+          - "syntax error"
+          - "mysql"
